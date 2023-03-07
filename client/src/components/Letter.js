@@ -25,7 +25,7 @@ const Letter = (data) => {
       //보낸목록 가리기
       if (user.user_nickname === senderNickname) {
         axios
-          .put('http://27.96.130.247:4000/hideSentLetter', {
+          .put(`${process.env.REACT_APP_CLIENT_HOST}/hideSentLetter`, {
             user_id: user.user_id,
             letter_context: data.data.letter_context,
           })
@@ -38,7 +38,7 @@ const Letter = (data) => {
       } //받은 목록 가리기
       else if (user.user_nickname === receiverNickname) {
         axios
-          .put('http://27.96.130.247:4000/hideReceivedLetter', {
+          .put(`${process.env.REACT_APP_CLIENT_HOST}/hideReceivedLetter`, {
             user_id: user.user_id,
             letter_context: data.data.letter_context,
           })

@@ -129,7 +129,7 @@ exports.deleteAccount = async (req, res) => {
     where: { receiver_id: req.body.user_id },
   });
 
-  if (result && receiverID) {
+  if (result) {
     res.send('회원 탈퇴가 완료되었습니다.');
   }
 };

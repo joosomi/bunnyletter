@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "bunny",
-    "password": "letter123",
-    "database": "bunny",
-    "host": "27.96.130.247",
+    "username": "cheerly",
+    "password": "cheerly123",
+    "database": "test",
+    "host": "43.200.1.127",
     "port": "3306",
     "dialect": "mysql"
   }

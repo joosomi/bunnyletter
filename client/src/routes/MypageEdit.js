@@ -47,7 +47,7 @@ const MypageEdit = (e) => {
       alert('새 비밀번호와 확인값이 일치하지 않습니다.');
     } else {
       axios
-        .put('http://27.96.130.247:4000/editProfile', {
+        .put(`${process.env.REACT_APP_CLIENT_HOST}/editProfile`, {
           user_id: user.user_id,
           user_nickname: user.user_nickname,
           user_pw: pwRef.current.value,

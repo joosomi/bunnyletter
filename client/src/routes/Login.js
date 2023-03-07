@@ -27,7 +27,7 @@ const Login = () => {
     }
 
     axios
-      .post('http://27.96.130.247:4000/login', {
+      .post(`${process.env.REACT_APP_CLIENT_HOST}/login`, {
         id: idRef.current.value,
         pw: pwRef.current.value,
       })

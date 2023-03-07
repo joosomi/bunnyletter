@@ -62,7 +62,7 @@ const ShareKakao = () => {
 
     console.log(imgId);
     axios
-      .post('http://27.96.130.247:4000/getLetterImg', {
+      .post(`${process.env.REACT_APP_CLIENT_HOST}/getLetterImg`, {
         imgId: imgId,
       })
       .then(async (res) => {
@@ -82,7 +82,7 @@ const ShareKakao = () => {
     //console.log(momentDate);
 
     axios
-      .post('http://27.96.130.247:4000/saveletter', {
+      .post(`${process.env.REACT_APP_CLIENT_HOST}/saveletter`, {
         imgURL: imgURL,
         receiverID: receiverID,
         senderID: senderID,

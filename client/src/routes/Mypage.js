@@ -36,7 +36,7 @@ const Mypage = () => {
   //onClick - 내가 보낸, 내가 받은
   const getSendLetters = () => {
     axios
-      .post('http://27.96.130.247:4000/getSendLetters', {
+      .post(`${process.env.REACT_APP_CLIENT_HOST}/getSendLetters`, {
         sender_nickname: user.user_nickname,
       })
       .then((res) => {
@@ -56,7 +56,7 @@ const Mypage = () => {
   const getReceiveLetters = () => {
     console.log();
     axios
-      .post('http://27.96.130.247:4000/getReceiveLetters', {
+      .post(`${process.env.REACT_APP_CLIENT_HOST}/getReceiveLetters`, {
         receiver_nickname: user.user_nickname,
       })
       .then((res) => {
@@ -93,7 +93,7 @@ const Mypage = () => {
     );
     if (confirm === true) {
       axios
-        .delete('http://27.96.130.247:4000/deleteUser', {
+        .delete(`${process.env.REACT_APP_CLIENT_HOST}/deleteUser`, {
           data: { user_id: user.user_id },
         })
         .then((res) => {

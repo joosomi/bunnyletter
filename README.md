@@ -1,10 +1,5 @@
  #  BunnyLetter
 
-<p align="center">
-  <img src="./img/readme.png" width="500px">
-</p>
-
-
 ## 프로젝트 소개
 <p>
 2023 계묘년을 맞이해 주변 사람들에게 편지를 작성해 마음을 전달할 수 있는 소통의 장이 되는 사이트를 제작했습니다.
@@ -18,14 +13,6 @@
 <br>
 <br>
     
-    
-### 기술 스택
-
-| JavaScript | Html&CSS |  React   |  Node   | Kakao API   |
-| :--------: | :--------: | :------: | :-----: | :-----: |
-|   ![js]    |   ![htmlCss]    | ![react] | ![nodejs] | ![Kakao]   |
-
-<br>
 
 ## 구현 기능
 
@@ -63,11 +50,3 @@
   - letter DB
     
 
-
-<!-- Stack Icon Refernces -->
-
-[js]: /img/js.png
-[htmlCss]:  /img/html_css_logo.png
-[nodejs]:  /img/Node.js_logo.svg.png
-[react]:  /img/React-icon.png
-[Kakao]:  /img/kakaoApi.png

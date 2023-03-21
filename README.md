@@ -1,4 +1,6 @@
  #  BunnyLetter
+<a href='https://ifh.cc/v-zZhv1c' target='_blank'><img src='https://ifh.cc/g/zZhv1c.png' border='0'></a>
+<a href='https://ifh.cc/v-lTvx6Q' target='_blank'><img src='https://ifh.cc/g/lTvx6Q.png' border='0'></a>
 
 ## 프로젝트 소개
 <p>
@@ -10,6 +12,10 @@
     
 ### 기간
 2023/1/24 ~ 2023/2/4 (총 1주)
+
+### 링크 
+http://52.79.93.121:7000/
+<p>아이디: root123, 비밀번호: root123</p>
 <br>
 <br>
     

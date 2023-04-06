@@ -95,3 +95,57 @@ http://52.79.93.121:7000/ <br>
     - 모든 페이지에서 로그인 상태를 파악 가능 및 다른 컴포넌트에서도 쉽게 접근하여 사용 가능
     
 - **`AWS EC2`를 이용하여 프로젝트 배포**
+
+<br>
+
+## 트러블 슈팅 및 개선사항
+
+#### 이미지 데이터 관리
+>- 캡쳐된 이미지는 blob 형식으로 넘어오는데, 이를 base 64로 인코딩하여 관리 중입니다.
+>- 그러나 현재 저장하는 string 값이 너무 길기 떄문에 서버에 불필요하게 큰 용량이 저장된다는 단점이 있습니다.
+>- 따라서 multer를 이용하거나 클라우드 스토리지 서비스를 이용하여 서버의 용량과 처리속도를 개선하는 방안이 필요합니다. 
+
+#### 라이브러리 호환성 문제 & 이미지 캡쳐 문제 
+>- 처음에는 dom-to-image 라이브러리를 사용하여 이미지를 캡쳐하고 저장하려고 하였습니다. 
+>- 하지만 dom-to-image는 크롬 브라우저에서만 제대로 작동하도록 설계되어 있다는 점을 간과하였고, 이를 해결하기 위해 html2canvas 라이브러리를 사용하였습니다.
+>- 그러나 html2canvas를 사용하였을 때 textarea가 한 줄 이상 캡쳐되지 않는 문제가 발생했습니다.
+>- 이 문제는 `@nidi/html2canvas` 라이브러리를 사용해 해결하였으나, 캡쳐가 짤리는 문제가 발생하여 이는 window.scroll로 해결하였습니다.
+
+<br>
+<summary><b>이미지 캡쳐 상세 코드</b></summary>
+
+```
+...
+import html2canvas from '@nidi/html2canvas';
+
+const MakeBunny = () => {
+  ...
+  const onClickSend = () => {
+    let letterContext = textAreaRef.current.value;
+
+    let checkLen = checkLength();
+    if (checkLen) {
+      if (letterContext === '' || letterContext === undefined) {
+        alert('편지 내용을 입력해주세요.');
+      } else {
+        //편지 내용 세션 저장
+        sessionStorage.setItem('letter_context', letterContext);
+        const card = bunnyCardRef.current;
+        let scale = 2;
+        window.scrollTo(0, 0);
+        html2canvas(card, { backgroundColor: null, width: 380 }).then(
+          (canvas) => {
+            navigate('/shareKakao', {
+              state: {
+                blob: canvas.toDataURL('image/png'),
+                receiver: receiver,
+                letterContext: textAreaRef.current.value,
+              },
+            });
+          }
+        );
+      }
+    }
+  };
+```
+</details>

@@ -28,9 +28,11 @@ http://52.79.93.121:7000/ <br>
 
 ## 2. 사용 기술
 #### `Back-end`
-  - NodeJS
+  - NodeJS(Express)
+  - Sequelize
 #### `Front-end`
   - ReactJS
+  - React-Redux
 #### `Database`
   - MySQL
 #### `DevOps`
